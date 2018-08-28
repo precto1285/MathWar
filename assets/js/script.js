@@ -31,6 +31,7 @@ $(document).ready(function() {
     if (player1 === '' && player2 === '') {
       console.log('no name');
       return console.error('Please enter 2 names');
+      alert('You need 2 names to start the game');
     } else {
       // Create Random 1st Number
       number1 = Math.floor(Math.random() * 10);
