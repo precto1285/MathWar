@@ -28,23 +28,29 @@ $(document).ready(function() {
   $('#gameStart').on('click', function() {
     console.log('Hello World');
 
-    // Create Random 1st Number
-    number1 = Math.floor(Math.random() * 10);
-    $('#numberOne').text(number1);
+    if (player1 === '' && player2 === '') {
+      console.log('no name');
+      return console.error('Please enter 2 names');
+    } else {
+      // Create Random 1st Number
+      number1 = Math.floor(Math.random() * 10);
+      $('#numberOne').text(number1);
 
-    // Create Random Operators
-    randomOp = operatorArray[Math.floor(Math.random() * operatorArray.length)];
-    $('#operator').text(randomOp);
+      // Create Random Operators
+      randomOp =
+        operatorArray[Math.floor(Math.random() * operatorArray.length)];
+      $('#operator').text(randomOp);
 
-    // Create Random 2nd Number
-    number2 = Math.floor(Math.random() * 10);
-    $('#numberTwo').text(number2);
+      // Create Random 2nd Number
+      number2 = Math.floor(Math.random() * 10);
+      $('#numberTwo').text(number2);
 
-    // Create Hidden Answer
+      // Create Hidden Answer
 
-    // Player Answer
-    $('#playerAnswer').val(function(e) {
-      var answer = e.this;
-    });
+      // Player Answer
+      $('#playerAnswer').val(function(e) {
+        var answer = e.this;
+      });
+    }
   });
 });
