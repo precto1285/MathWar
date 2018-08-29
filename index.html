@@ -28,7 +28,9 @@
     <!-- Player One -->
     <div class="row">
       <div class="col-lg-6 bg-secondary p-4">
-        <div class="card">
+        <button class="btn btn-danger d-block mb-3" data-toggle="collapse" data-target="#collapse1">Player 1</button>
+
+        <div id="collapse1" class="collapse card">
           <div class="card-header">
             <div class="dispay-4 text-center">
               Player 1
@@ -60,7 +62,9 @@
       </div>
       <!-- Player Two -->
       <div class="col-lg-6 bg-secondary p-4">
-        <div class="card">
+        <button class="btn btn-primary d-block mb-3" data-toggle="collapse" data-target="#collapse2">Player 2</button>
+
+        <div id="collapse2" class="card collapse">
           <div class="card-header">
             <div class="dispay-4 text-center">
               Player 2
@@ -94,69 +98,69 @@
   </section>
   <!-- Game Body-->
   <section id="gameBody" class="container mb-2">
-    <!-- Timer -->
-    <div class="row">
-      <div class="col text-center bg-primary text-white py-5">
-        <h2>Your Time: </h2>
-        <span id="timer" class="bg-danger"></span>
+    <!-- Equation Body -->
+    <section id="equationBody" class="container">
+      <!-- Timer -->
+      <div class="row">
+        <!-- Game Starter -->
+        <div id="gameStart" class="btn btn-success btn-block m-3" data-toggle="collapse" data-target="#collapse3">Start Game</div>
+        <div class="col m-3 text-center bg-primary text-white py-5">
+          <h2>Your Time: </h2>
+          <span id="timer" class="bg-danger"></span>
 
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- Equation Body -->
-  <section id="equationBody" class="container">
-    <!-- Game Starter -->
-    <div id="gameStart" class="btn btn-outline-success btn-block px-3">Start Game</div>
-    <div class="row my-2">
+      <div class="row my-2">
 
-      <!-- Random Equation Generator -->
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">
-            <h2 class="text-center">
-              Equation:
-            </h2>
+        <!-- Random Equation Generator -->
+        <div class="col-md-8 py-3 bg-warning">
+          <div class="card">
+            <div class="card-header bg-dark text-white">
+              <h2 class="text-center">
+                Equation:
+              </h2>
+            </div>
+            <div class="card-body">
+              <h3 class="randomDigit">
+                <span id="numberOne"></span>
+              </h3>
+              <h3 class="randomDigit">
+                <span id="operator"></span>
+              </h3>
+              <h3 class="randomDigit">
+                <span id="numberTwo"></span>
+              </h3>
+              <h3 class="randomDigit">=</h3>
+              <h3 class="randomDigit">
+                <span id="hiddenAnswer"></span>
+              </h3>
+            </div>
           </div>
-          <div class="card-body">
-            <h3 class="randomDigit">
-              <span id="numberOne"></span>
-            </h3>
-            <h3 class="randomDigit">
-              <span id="operator"></span>
-            </h3>
-            <h3 class="randomDigit">
-              <span id="numberTwo"></span>
-            </h3>
-            <h3 class="randomDigit">=</h3>
-            <h3 class="randomDigit">
-              <span id="hiddenAnswer"></span>
-            </h3>
+        </div>
+
+        <!-- Players Answer -->
+        <div class="col-md-4">
+          <div class="card p-3 bg-warning">
+            <div class="card-header bg-dark text-white">
+              <h2 class="text-center">
+                Answer:
+              </h2>
+            </div>
+            <div class="card-body bg-secondary text-white">
+              <h2>=</h2>
+              <form>
+                <div class="form-group m-3">
+                  <label for="playerAnswer">Your Answer:</label>
+                  <input name="playerAnswer" type='text' id="playerAnswer" placeholder="numbers only" />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Players Answer -->
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-header">
-            <h2 class="text-center">
-              Answer:
-            </h2>
-          </div>
-          <div class="card-body bg-secondary text-white">
-            <h2>=</h2>
-            <form>
-              <div class="form-group ">
-                <label for="playerAnswer">Your Answer:</label>
-                <input name="playerAnswer" type='text' id="playerAnswer" placeholder="numbers only" />
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
-
 
 
 

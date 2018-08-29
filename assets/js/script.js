@@ -9,7 +9,12 @@ $(document).ready(function() {
   var number2 = '';
   var randomOp = '';
   var operatorArray = ['+', '-', '*', '/'];
-  var hiddenAnswer = 0;
+  var hiddenAnswer;
+
+  var p1score = [];
+  var p2score = [];
+  var userAnswer;
+
   // Add player One's name to scoreboard
   $('#p-one-submit').on('click', function() {
     console.log('hello world');
@@ -28,30 +33,35 @@ $(document).ready(function() {
   $('#gameStart').on('click', function() {
     console.log('Hello World');
 
-    if (player1 === '' && player2 === '') {
+    if (player1 === '' || player2 === '') {
       console.log('no name');
-      return console.error('Please enter 2 names');
-      alert('You need 2 names to start the game');
+      alert('Please enter two player names');
     } else {
-      // Create Random 1st Number
-      number1 = Math.floor(Math.random() * 10);
-      $('#numberOne').text(number1);
+      function mathQ() {
+        // Create Random 1st Number
+        number1 = Math.floor(Math.random() * 10);
+        $('#numberOne').text(number1);
 
-      // Create Random Operators
-      randomOp =
-        operatorArray[Math.floor(Math.random() * operatorArray.length)];
-      $('#operator').text(randomOp);
+        // Create Random Operators
+        randomOp =
+          operatorArray[Math.floor(Math.random() * operatorArray.length)];
+        $('#operator').text(randomOp);
 
-      // Create Random 2nd Number
-      number2 = Math.floor(Math.random() * 10);
-      $('#numberTwo').text(number2);
+        // Create Random 2nd Number
+        number2 = Math.floor(Math.random() * 10);
+        $('#numberTwo').text(number2);
 
-      // Create Hidden Answer
-
-      // Player Answer
-      $('#playerAnswer').val(function(e) {
-        var answer = e.this;
-      });
+        // Create Hidden Answer
+        hiddenAnswer = number1 + randomOp + number2;
+        $('#hiddenAnswer').text(hiddenAnswer);
+      }
+      mathQ();
     }
   });
 });
+
+// Player Answer
+
+// Time Set
+
+//
